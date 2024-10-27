@@ -33,11 +33,11 @@ public class Main {
         System.out.println("Введите показатель скорости:");
         result = "";
         byte speed = new Scanner(System.in).nextByte();
-        if (speed>60){
-            result="придется заплатить штраф.";
-        }else{
-            if (0<speed){
-                result = "можно ездить спокойно.";
+        if (0<speed){
+            if (speed>60){
+                result="придется заплатить штраф.";
+            }else{
+               result = "можно ездить спокойно.";
             }
         }
         System.out.println("Если скорость " +speed
@@ -112,14 +112,18 @@ public class Main {
         int two = new Scanner(System.in).nextInt();
         System.out.println("И последнее...");
         int three = new Scanner(System.in).nextInt();
-        if (one<two || one<three){
+        if (one<two){
             if (two<three){
                 System.out.println(three +" - наибольшее число.");
             }else{
                 System.out.println(two +" - наибольшее число.");
             }
         }else{
-            System.out.println(one +" - наибольшее число.");
+            if (one<three){
+                System.out.println(three +" - наибольшее число.");
+            }else{
+                System.out.println(one +" - наибольшее число.");
+            }
         }
         System.out.println("***");
     }
